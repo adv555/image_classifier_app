@@ -1,0 +1,25 @@
+django
+django-tailwind
+django-crispy-forms==1.14.0
+fontawesomefree==6.3.0
+django-tinymce==3.6.1
+django-dotenv==1.4.2
+psycopg2-binary==2.9.5
+django-allauth
+Pillow
+
+django-email-users
+django-cloudinary-storage
+cloudinary
+gdown
+gpt-index==0.4.40
+
+
+# tensorflow
+# keras
+# keras_cv
+# numpy
+
+# gunicorn==20.1.0
+# whitenoise==6.4.0
+# django-cors-headers
