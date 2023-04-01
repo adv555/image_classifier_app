@@ -4,22 +4,22 @@ from django.shortcuts import render, redirect
 
 
 # # Create your views here.
-# @login_required
+@login_required
 def homepage(request):
     return render(request, "pages/about.html")
 
 
-# @login_required
+@login_required
 def image_classifier(request):
     return render(request, "pages/imageClassifier.html")
 
 
-# @login_required
+@login_required
 def team_page(request):
     return render(request, "pages/team.html")
 
 
-# @login_required
+@login_required
 def settings_page(request):
     return render(request, "pages/settings.html")
 
