@@ -7,11 +7,11 @@
 
             <!--    LOGO Title-->
                 <a href={% url 'frontend:about' %} >
-                    <h1 class='font-thin text-5xl flex text-[#6df492] tracking-tight uppercase ml-4'>
+                    <h1 class='flex justify-center items-center font-thin text-5xl flex text-[#6df492] tracking-tight uppercase ml-4'>
                         NA <img
                   class="h-10 w-10 "
 
-{#                  src="{% static 'images/favicon-3.png' %}"#}
+                  src="{% static 'images/favicon-3.png' %}"
                   alt="Your Company"
                 /> AI
                 </h1>
@@ -64,12 +64,12 @@
 
 
 
-{#                  <a href="{% url 'settings' user.username %}">#}
-{#                    <button type="button" class="rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">#}
-{#                        <span class="sr-only p-1">User Settings</span>#}
-{#                        {% include 'includes/icons/settings.svg' %}#}
-{#                    </button>#}
-{#                 </a>#}
+                  <a href="{% url 'settings' user.username %}">
+                    <button type="button" class="rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span class="sr-only p-1">User Settings</span>
+                        {% include 'includes/icons/settings.svg' %}
+                    </button>
+                 </a>
 
                   <a href="{% url 'logout' %}">
                       <button type="button" class="rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
