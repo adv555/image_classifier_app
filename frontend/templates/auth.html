@@ -2,13 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Design by foolishdeveloper.com -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'images/favicon-3.png' %}">
     <title>NAAI</title>
+    
+    <!--Stylesheet-->
 
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">#}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <!--Stylesheet-->
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
      {% tailwind_css %}
@@ -17,11 +20,10 @@
 <body >
 <div class="flex  w-full h-screen relative" style="background-image: url({% static 'images/bg-green-4.jpeg' %}) ; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
         <canvas class="absolute inset-0 z-10 w-full h-screen"  id="spider"></canvas>
-{#<div class="flex  w-full h-screen bg-primary" style="background-image: url({% static 'images/bg_image.webp' %}) ; background-size: cover; background-repeat: no-repeat; background-position: center center; ">#}
 
-    <div class="relative flex w-full md:w-1/2 justify-center ">
+    <div class="hidden lg:flex lg:w-1/2 justify-center ">
     </div>
-    <div class="hidden md:flex md:w-1/2 justify-center relative z-20">
+    <div class="flex w-full lg:w-1/2 justify-center relative z-20">
         {% block content %}{% endblock %}
     </div>
 </div>

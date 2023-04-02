@@ -9,22 +9,22 @@
 /*    background-color: #1f2937;*/
 /*}*/
 
-form{
-    height: min-content;
-    width: 380px;
-    /*background-color: #1f2937;*/
-    position: absolute;
-    z-index: 20;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 40px 35px;
-}
+/*form{*/
+/*    height: min-content;*/
+/*    width: 380px;*/
+/*    !*background-color: #1f2937;*!*/
+/*    position: absolute;*/
+/*    z-index: 20;*/
+/*    transform: translate(-50%,-50%);*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    border-radius: 10px;*/
+/*    backdrop-filter: blur(10px);*/
+/*    -webkit-backdrop-filter: blur(10px);*/
+/*    border: 2px solid rgba(255,255,255,0.1);*/
+/*    box-shadow: 0 0 40px rgba(8,7,16,0.6);*/
+/*    padding: 40px 35px;*/
+/*}*/
 form *{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
