@@ -28,7 +28,7 @@ form{
 form *{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     outline: none;
     border: none;
 }
