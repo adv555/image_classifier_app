@@ -6,8 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="icon" href="{% static 'images/favicon-3.png' %}">
       <title>NAAI</title>
-      <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-      <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+{#      <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>#}
+{#      <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />#}
      {% load static %}
       {% tailwind_css %}
      <style>
@@ -33,7 +33,7 @@
   {% include "includes/navigation.html" %}
  {% include 'includes/footer.html' %}
 
-   <div class="container mx-auto px-4 absolute top-20 left-0 right-8 bottom-14  w-full overflow-hidden border-4 border-red-500">
+   <div class="mx-auto px-4 absolute top-20 left-0 right-8 bottom-14  w-full overflow-hidden ">
          <!--    HEADER-->
       <header class="container m-auto flex relative flex justify-center items-center my-5 ">
             {% block header %}{% endblock %}
@@ -44,7 +44,7 @@
       </header>
 
     <!--    DASHBOARD-->
-      <main class="container m-auto h-full max-h-screen overflow-auto ">
+      <main class="container m-auto h-full max-h-screen overflow-auto pb-56  ">
 
           {% block content %}{% endblock %}
 {#            {% block photos_content %}{% endblock %}#}
@@ -73,7 +73,7 @@
         }, 1500);
     </script>
 
- <script src="{% static 'js/file_upload.js' %}"></script>
+
   <script  type="module" src="{% static 'js/app.js' %}"></script>
 
   </body>

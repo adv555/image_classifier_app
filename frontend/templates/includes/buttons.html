@@ -1,17 +1,17 @@
   <div class="flex items-center justify-between px-10 mb-4">
-{#        <form method="post" action="{% url 'clear_database' %}">#}
+        <form method="post" action="{% url 'cifar_10:clear_history' %}">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ request.path }}">
         <button type="submit" class="text-white px-5 py-2 mt-5 border shadow rounded-lg bg-[#012210b3] hover:bg-green-900" >
-          Clear Database
+          Clear History
         </button>
-{#    </form>#}
+    </form>
 
-{#        <form method="post" action="{% url 'photo_list' %}">#}
-        {% csrf_token %}
+<form method="post" action="{% url 'cifar_10:show_all_history' %}">
+    {% csrf_token %}
         <input type="hidden" name="next" value="{{ request.path }}">
-        <button type="submit" class="text-white px-5 py-2 mt-5 border shadow rounded-lg bg-[#012210b3] hover:bg-green-900" >
-          Show history
+            <button  id="spoiler"  type="submit" class=" show_all_btn text-white px-5 py-2 mt-5 border shadow rounded-lg bg-[#012210b3] hover:bg-green-900" >
+          Show all
         </button>
-{#  </form>#}
+</form>
     </div>

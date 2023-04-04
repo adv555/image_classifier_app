@@ -5,21 +5,49 @@
             <div class=" flex items-center justify-center mb-2 md:mb-0 p-5 w-full md:w-1/2  h-[300px] ">
 
             <form class="flex w-full items-start justify-center gap-5" method="post" enctype="multipart/form-data">
-         {% csrf_token %}
-         <div class="flex flex-col justify-center gap-5">
-            <label class="block mb-4 text-sm font-medium uppercase text-white" for="large_size">Upload Image (jpg,png,svg,jpeg)</label>
-                         <input type="file" name="file" id="fileupload"  class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-[#d0e4da]  focus:outline-none " >
-{#            <input type="file" name="file" id="fileupload" data-url="{% url 'basic_upload' %}" class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-[#d0e4da]  focus:outline-none " >#}
-                <button class="text-white px-10 py-2 border bg-[#012210b3] hover:bg-green-900  rounded-lg  hover:bg-green-900 transition" type="submit">Predict</button>
-         </div>
-     </form>
+                {% csrf_token %}
+
+                <div class="flex flex-col justify-center gap-5">
+                     {% for field in form %}
+                         <label class="block mb-4 text-sm font-medium uppercase text-white" for="large_size">Upload Image
+                             <span class="italic lowercase">( jpg, png, svg, jpeg )</span></label>
+                    {{ field }}
+                     {% endfor %}
+                    <button class="text-white px-10 py-2 border bg-[#012210b3] hover:bg-green-900  rounded-lg  hover:bg-green-900 transition" type="submit">Predict</button>
+                </div>
+            </form>
             </div>
 
-            <div class="w-full md:p-5 md:w-1/2 h-[300px] text-white">
-                 <h1 class="uppercase font-bold text-center">Prediction:  <span class="capitalize font-serif">{{ predict_pictures }}</span></h1>
-                <div class="flex flex-wrap justify-center">
-                    <img src="{{ photo }}" class="h-[230px] max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 object-fit" alt="" />
-                </div>
+            <div class="w-full  md:p-5 md:w-1/2 h-[300px] text-white py-4">
+                {% if image %}
+                     <h2 class="font-semibold text-center">
+                         Prediction:
+                         <span class="uppercase  font-serif pr-1 text-green-400">{{ result }}</span>
+                         Accuracy: <span class="uppercase  font-serif text-green-400">{{ accuracy }}</span>
+                     </h2>
+
+                     <div class="flex flex-wrap justify-center overflow-hidden px-1 ">
+                        <img src="{{ image.file_name }}" class="h-[230px] max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg md:object-none " alt="" />
+                    </div>
+
+                {% else %}
+                    <div class="flex flex-col items-center justify-center h-full min-w-sm">
+                        <h2 class="font-semibold text-center border-b border-b-white">
+                         Prediction:
+                         <span class="uppercase  font-serif pr-1 text-green-400">{{ result }}</span>
+                         Accuracy: <span class="uppercase  font-serif text-green-400">{{ accuracy }}</span>
+                     </h2>
+{#                        <h2 class="font-semibold text-center">#}
+{#                            Upload Image to Predict#}
+{#                        </h2>#}
+
+{#                        <div class="flex flex-wrap justify-center overflow-hidden px-1 ">#}
+{#                            <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" class="h-[230px] max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg md:object-none " alt="" />#}
+{#                        </div>#}
+                        </div>
+
+
+                {% endif %}
             </div>
         </div>
     </div>

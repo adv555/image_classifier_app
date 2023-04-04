@@ -6,10 +6,13 @@ from cloudinary_storage.storage import MediaCloudinaryStorage
 from .forms import UploadFile
 from .models import NeuralModel, ImageManager
 from .keras_model import image_classify
+from django.utils import timezone
+from datetime import datetime, timedelta
 
 
 class IndexView(View, LoginRequiredMixin):
-    template_name = 'pages/index.html'
+    # template_name = 'pages/index.html'
+    template_name = 'pages/classifier.html'
     form_class = UploadFile
     context = {}
 
@@ -26,7 +29,13 @@ class IndexView(View, LoginRequiredMixin):
             self.context.update({'result': image.model_prediction})
             self.context.update({'accuracy': image.accuracy})
 
-        print('self.context: ', self.context)
+        if self.context.get('image'):
+            difference = datetime.now(timezone.utc) - image.uploaded_at
+            if difference > timedelta(minutes=1):
+                self.context.update({'image': None})
+                self.context.update({'result': None})
+                self.context.update({'accuracy': None})
+
 
         return render(request, self.template_name, context=self.context)
 
@@ -68,12 +77,32 @@ class IndexView(View, LoginRequiredMixin):
             document.save()
 
         return redirect('cifar_10:cifar_10')
+        # return redirect('frontend:classifier')
 
 
-class ProfileView(LoginRequiredMixin, View):
+class HistoryView(LoginRequiredMixin, View):
     template_name = 'pages/history.html'
     model = ImageManager
 
     def get(self, request, *args, **kwargs):
-        images = self.model.objects.filter(user_id=request.user.id).order_by('-uploaded_at')
-        return render(request, self.template_name, context={'title': 'Web assistant', 'images': images})
+        images = self.model.objects.filter(user_id=request.user.id).order_by('-uploaded_at')[:8]
+        for image in images:
+            print('image: ', image.file_name)
+        return render(request, self.template_name, context={'title': 'Predictions history', 'images': images})
+
+
+def show_all_images(request):
+    images = ImageManager.objects.filter(user_id=request.user.id).order_by('-uploaded_at')
+    return render(request, 'pages/history.html', context={'title': 'Predictions history', 'images': images})
+
+
+def clear_history(request):
+    images = ImageManager.objects.filter(user_id=request.user.id).delete()
+    return redirect('cifar_10:history')
+
+
+def delete_image(request, pk):
+    image = ImageManager.objects.get(pk=pk)
+    image.delete()
+    return redirect('cifar_10:history')
+

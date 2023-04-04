@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+<div class="flex flex-col justify-center items-center" xmlns="http://www.w3.org/1999/html">
+    <h2 class="text-3xl font-bold mb-5">How it works?</h2>
+    <div class="">
+            <p class=" tracking-wide"> Just load the picture that could be a part of the 10 categories:</p>
+        <details> airplane, car, bird, cat, deer, dog, frog, horse, ship, truck</details>
+            <p>Check if our classifier recognized your pictures correctly</p>
+          </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+       {% include 'includes/input.html' %}
+
+{% endblock %}

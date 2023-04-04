@@ -11,7 +11,7 @@ def homepage(request):
 
 @login_required
 def image_classifier(request):
-    return render(request, "pages/imageClassifier.html")
+    return render(request, "pages/classifier.html")
 
 
 @login_required
