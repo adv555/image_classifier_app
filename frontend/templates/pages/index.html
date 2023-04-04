@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'cifar10.html' %}
 {% block title %}
 {{ block.super }}
 {% endblock %}
@@ -12,20 +12,18 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                <label class="my_class_{{ forloop.counter }}" for="{{ field.auto_id }}">{{ field.label }} </label>
-                <div class="select-icon_{{ forloop.counter }}">
-                    <img src="static/images/photo_{{ forloop.counter }}.ico" alt="gg">
-                </div>
+                <label class="" for="{{ field.auto_id }}">{{ field.label }} </label>
+
                 <p class="file-name_{{ forloop.counter }}"></p>
                 {{ field }}
                 {% endfor %}
                 <button class="upload_file_btn" type="submit">Submit</button>
             </form>
         </div>
-        {% if image %}
+{#        {% if image %}#}
         <div>
             <figure>
-                <img class="uploaded_image" src={{ image.file_name.url }}/>
+                <img class="uploaded_image" src="{{ image.file_name }}" alt=""/>
             </figure>
             <h1 class="model_prediction">{% if result %} Result: {{ result }}, Accuracy: {{ accuracy }} {% else %}
                 Result: Invalid photo {% endif%}</h1>
@@ -43,7 +41,7 @@
                 </div>
             </form>
         </div>
-        {% endif %}
+{#        {% endif %}#}
     </div>
 </div>
 {% endblock %}

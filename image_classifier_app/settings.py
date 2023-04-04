@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'tailwind',
     'frontend',
     'django_browser_reload',
@@ -45,14 +47,14 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'crispy_forms',
     'user_auth',
+    'cifar_10',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
-    'cloudinary_storage',
-    'cloudinary',
+
 ]
 
 AUTH_USER_MODEL = 'user_auth.CustomUser'
@@ -165,6 +167,9 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+# print(os.environ.get('CLOUD_NAME'), os.environ.get('API_KEY'), os.environ.get('API_SECRET'))
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
