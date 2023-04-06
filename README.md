@@ -5,7 +5,8 @@ This web application provides classification service for any image to 10 differe
 
 ### Model
 The model is created using [Xception](https://keras.io/api/applications/xception/) convolutional base and can be changed to users model via website form.
-Such methods as data augmentation, DropBlock2D, GlobalAveragePooling2D, Dropblock, ReduceLROnPlateau are used to prevent an overfitting of the model.
+
+[//]: # (Such methods as data augmentation, DropBlock2D, GlobalAveragePooling2D, Dropblock, ReduceLROnPlateau are used to prevent an overfitting of the model.)
 The model's test accuracy score is 97.16% on [CIFAR-10](https://www.kaggle.com/c/cifar-10) test dataset.
 
 **_Tech used_**

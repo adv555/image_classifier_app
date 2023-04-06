@@ -7,22 +7,26 @@
 
 {% block content %}
 
-{#    <article class='max-w-4xl mx-auto mt-5 space-y-4'>#}
-{#        <div class='space-y-2 text-lg leading-relaxed overflow-auto'>#}
-            <p>
-                This is a project to implement the Convoluted Neural Network with 91% accuracy in the Django application, for visual confirmation of network predictions
-            </p>
-            <p>
-                In an ordinary perceptron, which is a fully connected neural network, each neuron is connected to all the neurons of the previous layer, each with a personal weight. In the convolutional neural network, the convolution operation uses only a limited matrix of weights of small size, which is «moved» along the entire layer being processed (at the very beginning - directly from the input image)by forming an activation signal after each shift for the neuron of the next layer with the same position. That is, different neurons in the output layer use the same weight matrix, which is also called the convolution core. It is interpreted as the visual encoding of a feature, such as having an inclined line at a certain angle. Then the next layer produced by the convolution operation of such a weighting matrix shows the presence of this feature in the layer being treated and its coordinates, forming the so-called feature map
-            </p>
-            <p class="text-bold my-5">
-                The concepts used in the network are:
-            </p>
-            <ul class='list-disc list-inside '>
-                <li>Increasing Data Logging (DATA AUGMENTATION) is a strategy that allows you to significantly increase the variety of data available for training models without collecting new data. The training uses data enhancement techniques such as trimming, filling and horizontal reflection.</li>
-                <li>Normalization: Batch normalization (BATCH-NORMALIZATION) is a method for increasing artificial neural networks' speed, performance, and stability. It normalises the input layer by re-centring and scaling the image.</li>
-            </ul>
-{#        </div>#}
+   <div class='flex flex-col gap-4 justify-between items-center'>
+    <p >
+    This web application utilizes a powerful Convolutional Neural Network (CNN) model that has been trained on the CIFAR-10 dataset to classify images into 10 different categories.
+        These categories include airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. With an impressive test accuracy score of 97.16%, this model was built using Xception convolutional base, which is known for its high performance in image recognition tasks.
+    </p>
+    <p>
+    To enhance the training data, the network employs a technique called Data Augmentation.
+        This strategy significantly increases the amount of data available for training models without the need to collect new data.
+        Techniques such as trimming, filling, and horizontal reflection are used to augment the training data, ensuring that the model is robust to variations in image orientation and lighting conditions.
+    </p>
+    <p>
+    Furthermore, the network uses Batch Normalization to improve the speed, performance, and stability of the artificial neural network.
+        This technique normalizes the input layer by re-centering and scaling the image, making it easier for the network to learn patterns in the data.
+    </p>
+    <p>
+    The model was trained using the Keras deep learning library on a GPU-enabled machine, allowing for efficient training and faster convergence. Overall, this web application provides an accurate and reliable image classification service that can be used for a variety of applications, from object recognition in self-driving cars to identifying species in wildlife conservation.
+    </p>
+   </div>
+
+
 
 
 {% endblock %}

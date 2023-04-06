@@ -11,14 +11,14 @@ Pillow
 django-email-users
 django-cloudinary-storage
 cloudinary
-gdown
-gpt-index==0.4.40
+# gdown
+# gpt-index==0.4.40
 
 
-# tensorflow
-# keras
+tensorflow
+keras
 # keras_cv
-# numpy
+numpy
 
 # gunicorn==20.1.0
 # whitenoise==6.4.0
