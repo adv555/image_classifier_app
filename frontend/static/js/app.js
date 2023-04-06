@@ -1,5 +1,3 @@
 import './menu.js';
-// import './dropzone.js';
-// import './file_upload.js';
-
-
+import './activeLink.js';
+import './notification.js';

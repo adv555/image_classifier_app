@@ -11,7 +11,6 @@ from datetime import datetime, timedelta
 
 
 class IndexView(View, LoginRequiredMixin):
-    # template_name = 'pages/index.html'
     template_name = 'pages/classifier.html'
     form_class = UploadFile
     context = {}
@@ -35,7 +34,6 @@ class IndexView(View, LoginRequiredMixin):
                 self.context.update({'image': None})
                 self.context.update({'result': None})
                 self.context.update({'accuracy': None})
-
 
         return render(request, self.template_name, context=self.context)
 
@@ -61,15 +59,11 @@ class IndexView(View, LoginRequiredMixin):
                                                user_id=request.user.id
                                                )
         document.save()
-
-        print('document: ', document)
-        print('document.file_name: ', document)
-
         document_path = file
-        print('document_path: ', document_path)
+
         result = image_classify(document_path, model_path)
 
-        print('result: ', result)
+
         if result != ["Invalid photo"]:
             document.model_prediction = result[0]
             document.accuracy = result[1]
@@ -86,8 +80,6 @@ class HistoryView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         images = self.model.objects.filter(user_id=request.user.id).order_by('-uploaded_at')[:8]
-        for image in images:
-            print('image: ', image.file_name)
         return render(request, self.template_name, context={'title': 'Predictions history', 'images': images})
 
 
@@ -105,4 +97,3 @@ def delete_image(request, pk):
     image = ImageManager.objects.get(pk=pk)
     image.delete()
     return redirect('cifar_10:history')
-

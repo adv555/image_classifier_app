@@ -6,8 +6,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="icon" href="{% static 'images/favicon-3.png' %}">
       <title>NAAI</title>
-{#      <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>#}
-{#      <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />#}
      {% load static %}
       {% tailwind_css %}
      <style>
@@ -47,32 +45,10 @@
       <main class="container m-auto h-full max-h-screen overflow-auto pb-56  ">
 
           {% block content %}{% endblock %}
-{#            {% block photos_content %}{% endblock %}#}
-
 
       </main>
    </div>
-    </div>
-    <script>
-        let links = document.querySelectorAll('.nav a');
-        links.forEach(link => {
-            const currentLink = document.URL;
-            if (link.href === currentLink) {
-                link.classList.add('bg-[#012210c4]');
-                link.classList.add('dark:bg-[#011b0d]');
-            }
-
-        });
-    </script>
-    <script>
-        let alert = document.querySelectorAll('.alert');
-        setTimeout(() => {
-            alert.forEach(alert => {
-                alert.style.display = 'none';
-            })
-        }, 1500);
-    </script>
-
+</div>
 
   <script  type="module" src="{% static 'js/app.js' %}"></script>
 

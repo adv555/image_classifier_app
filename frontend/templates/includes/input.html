@@ -27,7 +27,7 @@
                      </h2>
 
                      <div class="flex flex-wrap justify-center overflow-hidden px-1 ">
-                        <img src="{{ image.file_name }}" class="h-[230px] max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg md:object-none " alt="" />
+                        <img src="{{ image.file_name }}" class="h-[230px] w-3/4 object-contain max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg" alt="" />
                     </div>
 
                 {% else %}
@@ -37,14 +37,11 @@
                          <span class="uppercase  font-serif pr-1 text-green-400">{{ result }}</span>
                          Accuracy: <span class="uppercase  font-serif text-green-400">{{ accuracy }}</span>
                      </h2>
-{#                        <h2 class="font-semibold text-center">#}
-{#                            Upload Image to Predict#}
-{#                        </h2>#}
 
-{#                        <div class="flex flex-wrap justify-center overflow-hidden px-1 ">#}
-{#                            <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" class="h-[230px] max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg md:object-none " alt="" />#}
+{#                        <div class="flex flex-wrap justify-center overflow-hidden px-1  ">#}
+{#                            <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" class="h-[230px] max-w-xs md:max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 py-2 border rounded-lg " alt="" />#}
 {#                        </div>#}
-                        </div>
+{#                        </div>#}
 
 
                 {% endif %}
